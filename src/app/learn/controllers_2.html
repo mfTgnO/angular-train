@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>controllers</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-model.html -->
+</head>
+
+<body>
+    <!-- 
+        控制器方法
+        上面的实例演示了一个带有 lastName 和 firstName 这两个属性的控制器对象。
+
+        控制器也可以有方法（变量和函数）：
+
+      -->
+    <div ng-app="myApp" ng-controller="personCtrl">
+
+        名: <input type="text" ng-model="firstName"><br>
+        姓: <input type="text" ng-model="lastName"><br>
+        <br>
+        姓名: {{fullName()}}
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('personCtrl', function ($scope) {
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+            $scope.fullName = function () {
+                return $scope.firstName + " " + $scope.lastName;
+            }
+        });
+    </script>
+</body>
+
+</html>
