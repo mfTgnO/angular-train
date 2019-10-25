@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>forms</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-forms.html -->
+</head>
+<!-- 
+    AngularJS 表单
+    AngularJS 表单是输入控件的集合。
+
+    HTML 控件
+    以下 HTML input 元素被称为 HTML 控件:
+
+    input 元素
+    select 元素
+    button 元素
+    textarea 元素
+    -->
+
+<body>
+
+    <!--         
+        数据绑定
+        Input 控件使用 ng-model 指令来实现数据绑定。
+      -->
+    <div ng-app="myApp" ng-controller="formCtrl">
+        <form>
+            First Name: <input type="text" ng-model="firstname">
+        </form>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('formCtrl', function ($scope) {
+            $scope.firstname = "John";
+        });
+    </script>
+</body>
+
+</html>

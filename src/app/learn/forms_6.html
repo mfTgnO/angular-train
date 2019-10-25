@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>forms</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-forms.html -->
+</head>
+<!-- 
+    AngularJS 表单
+    AngularJS 表单是输入控件的集合。
+
+    HTML 控件
+    以下 HTML input 元素被称为 HTML 控件:
+
+    input 元素
+    select 元素
+    button 元素
+    textarea 元素
+    -->
+
+<body ng-app="">
+
+    <!--         
+        下拉框初始化无默认值，或者有空白选项，影响美观，可通过以下方法调整：
+
+        1.给定初始化信息（ng-init）
+        2.隐藏空白选项（ng-show="false"）
+      -->
+    <form>
+        选择一个选项:
+        <!-- <select ng-model="myVar" ng-init="myVar='tuts'"> -->
+        <select ng-model="myVar">
+            <option value="" ng-show="false">
+            <option value="dogs">Dogs
+            <option value="tuts">Tutorials
+            <option value="cars">Cars
+        </select>
+    </form>
+
+    <div ng-switch="myVar">
+        <div ng-switch-when="dogs">
+            <h1>Dogs</h1>
+            <p>Welcome to a world of dogs.</p>
+        </div>
+        <div ng-switch-when="tuts">
+            <h1>Tutorials</h1>
+            <p>Learn from examples.</p>
+        </div>
+        <div ng-switch-when="cars">
+            <h1>Cars</h1>
+            <p>Read about cars.</p>
+        </div>
+    </div>
+
+    <p>ng-switch 指令根据下拉菜单的选择结果显示或隐藏 HTML 区域。</p>
+</body>
+
+</html>

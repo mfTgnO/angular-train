@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<title>include</title>
+<!-- https://www.runoob.com/angularjs/angularjs-include.html -->
+<!-- 
+    AngularJS 包含
+    在 AngularJS 中，你可以在 HTML 中包含 HTML 文件。
+
+    在 HTML 中包含 HTML 文件
+    在 HTML 中，目前还不支持包含 HTML 文件的功能。
+
+    服务端包含
+    大多服务端脚本都支持包含文件功能 (SSI： Server Side Includes)。
+
+    使用 SSI, 你可在 HTML 中包含 HTML 文件，并发送到客户端浏览器。
+
+    PHP 实例
+    <?php require("navigation.php"); ?>
+    客户端包含
+    通过 JavaScript 有很多种方式可以在 HTML 中包含 HTML 文件。
+
+    通常我们使用 http 请求 (AJAX) 从服务端获取数据，返回的数据我们可以通过 使用 innerHTML 写入到 HTML 元素中。
+ -->
+
+<body ng-app="">
+
+    <div ng-include="'runoob.html'"></div>
+
+</body>
+
+
+</html>
