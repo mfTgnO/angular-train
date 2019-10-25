@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>filters</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-filters.html -->
+</head>
+
+<body>
+    <!-- 
+        自定义过滤器
+        以下实例自定义一个过滤器 reverse，将字符串反转：
+     -->
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+
+        姓名: {{ msg | reverse }}
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.msg = "abcd";
+        });
+        app.filter('reverse', function () { //可以注入依赖
+            return function (text) {
+                return text.split("").reverse().join("");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

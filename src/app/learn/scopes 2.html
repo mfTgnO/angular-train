@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>scope</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-model.html -->
+
+    <!-- 
+    Scope(作用域) 是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带。
+    Scope 是一个对象，有可用的方法和属性。
+    Scope 可应用在视图和控制器上。 
+    -->
+</head>
+
+<body>
+    <!-- 
+        Scope 概述
+        AngularJS 应用组成如下：
+
+        View(视图), 即 HTML。
+        Model(模型), 当前视图中可用的数据。
+        Controller(控制器), 即 JavaScript 函数，可以添加或修改属性。
+        
+        scope 是模型。
+        scope 是一个 JavaScript 对象，带有属性和方法，这些属性和方法可以在视图和控制器中使用。
+    -->
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <input ng-model="name">
+        <h1>{{greeting}}</h1>
+        <button ng-click='sayHello()'>点我</button>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.name = "Runoob";
+            $scope.sayHello = function () {
+                $scope.greeting = 'Hello ' + $scope.name + '!';
+            };
+        });
+    </script>
+</body>
+
+</html>

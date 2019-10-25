@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>services</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-services.html -->
+</head>
+<!-- 
+
+    $timeout 服务
+    AngularJS $timeout 服务对应了 JS window.setTimeout 函数。
+
+    实例
+    两秒后显示信息
+ -->
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <p>两秒后显示信息:</p>
+
+        <h1>{{myHeader}}</h1>
+
+    </div>
+
+    <p>$timeout 访问在规定的毫秒数后执行指定函数。</p>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope, $timeout) {
+            $scope.myHeader = "Hello World!";
+            $timeout(function () {
+                $scope.myHeader = "How are you today?";
+            }, 2000);
+        });
+    </script>
+</body>
+
+</html>

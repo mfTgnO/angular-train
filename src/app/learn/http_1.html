@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>http</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-http.html -->
+</head>
+<!-- 
+    AngularJS XMLHttpRequest
+    $http 是 AngularJS 中的一个核心服务，用于读取远程服务器的数据。
+
+    使用格式：
+ -->
+
+<body>
+    <div ng-app="myApp" ng-controller="siteCtrl">
+
+        <!-- <ul>
+            <li ng-repeat="x in names">
+                {{ x.Name + ', ' + x.Country }}
+            </li>
+        </ul> -->
+
+        <h6>{{status}}</h6>
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('siteCtrl', function ($scope, $http) {
+            $http({
+                method: 'GET',
+                // url: 'file:///E:/workspace/ws5/angular-train/src/app/learn/json/sites.json'
+                url: 'https://kunpeng.csdn.net/ad/brand/template/666?m=EEASLnnntcnvpyAAHnEDQDnpEbnHSLLcEUQEAnAEDHXpbLUHXpEXtLiJXEHQSSipLbLAWQynJSfSbtSJboLJQnXUEASLyHEtcnQQ&k='
+            }).then(function successCallback(response) {
+                $scope.status = response.status;
+            }, function errorCallback(response) {
+                // 请求失败执行代码
+                console.log('请求失败');
+            });
+
+        });
+    </script>
+</body>
+
+</html>
