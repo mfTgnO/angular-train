@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>tables</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-tables.html -->
+
+    <!-- 
+
+        使用 CSS 样式
+        为了让页面更加美观，我们可以在页面中使用CSS
+     -->
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<!-- 
+    AngularJS 表格
+    ng-repeat 指令可以完美的显示表格。
+
+    在表格中显示数据
+    使用 angular 显示表格是非常简单的：
+ -->
+
+<body>
+    <div ng-app="myApp" ng-controller="customersCtrl">
+
+        <table>
+            <!-- 使用 $even 和 $odd -->
+            <tr ng-repeat="x in names">
+                <td ng-if="$odd" style="background-color:#DC143C">{{ x.Name }}</td>
+                <td ng-if="$even" style="background-color:#191970">{{ x.Name }}</td>
+                <td ng-if="$odd" style="background-color:#191970">{{ x.Country }}</td>
+                <td ng-if="$even" style="background-color:#DC143C">{{ x.Country }}</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function ($scope, $http) {
+            $http.get('./json/customers.json')
+                .then(function (result) {
+                    $scope.names = result.data.records;
+                });
+
+            // $.getJSON('assets/customers.json', function (result) {
+            //     console.log('result:' + result);
+            // });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>html-events</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-html-events.html -->
+</head>
+
+<body>
+    <!-- 
+        ng-click 指令
+        ng-click 指令定义了 AngularJS 点击事件。
+     -->
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <button ng-click="count = count + 1">点我！</button>
+
+        <p>{{ count }}</p>
+
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.count = 0;
+        });
+    </script>
+</body>
+
+</html>

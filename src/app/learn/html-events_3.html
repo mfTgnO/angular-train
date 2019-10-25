@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>html-events</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-html-events.html -->
+</head>
+
+<body>
+    <!-- 
+        显示 HTML 元素
+        ng-show 指令可用于设置应用中的一部分是否可见 。
+
+        ng-show="false" 可以设置 HTML 元素 不可见。
+
+        ng-show="true" 可以以设置 HTML 元素可见。
+
+        以下实例使用了 ng-show 指令:
+     -->
+    <div ng-app="myApp" ng-controller="personCtrl">
+
+        <button ng-click="toggle()">隐藏/显示</button>
+
+        <p ng-show="myVar">
+            名: <input type="text" ng-model="firstName"><br>
+            姓: <input type="text" ng-model="lastName"><br>
+            <br>
+            姓名: {{firstName + " " + lastName}}
+        </p>
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('personCtrl', function ($scope) {
+            $scope.firstName = "John",
+                $scope.lastName = "Doe"
+            $scope.myVar = true;
+            $scope.toggle = function () {
+                $scope.myVar = !$scope.myVar;
+            }
+        });
+    </script>
+</body>
+
+</html>

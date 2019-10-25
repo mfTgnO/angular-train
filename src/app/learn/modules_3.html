@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>modules</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-modules.html -->
+</head>
+<!-- 
+        AngularJS 模块
+        模块定义了一个应用程序。
+
+        模块是应用程序中不同部分的容器。
+
+        模块是应用控制器的容器。
+
+        控制器通常属于一个模块。
+     -->
+
+<body>
+
+    <!--         
+        添加指令
+        AngularJS 提供了很多内置的指令，你可以使用它们来为你的应用添加功能。
+
+        完整的指令内容可以参阅 AngularJS 参考手册。
+
+        此外，你可以使用模块来为你应用添加自己的指令：
+      -->
+    <div ng-app="myApp" runoob-directive></div>
+
+    <script>
+
+        var app = angular.module("myApp", []);
+
+        app.directive("runoobDirective", function () {
+            return {
+                template: "我在指令构造器中创建!"
+            };
+        });
+    </script>
+</body>
+
+</html>

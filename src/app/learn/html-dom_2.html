@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>html-dom</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-html-dom.html -->
+</head>
+<body>
+    <div ng-app="" ng-init="hour=13">
+        <!-- 
+        ng-show 指令
+        ng-show 指令隐藏或显示一个 HTML 元素。
+     -->
+        <p ng-show="true">我是可见的。ng-show 指令</p>
+
+        <p ng-show="false">我是不可见的。ng-show 指令</p>
+
+
+        <!-- 
+            ng-show 指令根据 value 的值来显示（隐藏）HTML 元素。
+            你可以使用表达式来计算布尔值（ true 或 false）
+         -->
+        <p ng-show="hour > 12">我是可见的。ng-show 指令根据 value 的值来显示（隐藏）HTML 元素。</p>
+
+        <!-- 
+            ng-hide 指令
+            ng-hide 指令用于隐藏或显示 HTML 元素。
+         -->
+        <p ng-hide="true">我是不可见的。ng-hide 指令</p>
+
+        <p ng-hide="false">我是可见的。ng-hide 指令</p>
+    </div>
+</body>
+
+</html>

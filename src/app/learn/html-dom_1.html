@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>html-dom</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-html-dom.html -->
+
+    <!-- 
+
+        AngularJS HTML DOM
+        AngularJS 为 HTML DOM 元素的属性提供了绑定应用数据的指令。
+     -->
+</head>
+<!-- 
+    ng-disabled 指令
+    ng-disabled 指令直接绑定应用程序数据到 HTML 的 disabled 属性。
+ -->
+
+<body>
+    <div ng-app="" ng-init="mySwitch=true">
+        <p>
+            <button ng-disabled="mySwitch">点我!</button>
+        </p>
+        <p>
+            <input type="checkbox" ng-model="mySwitch" />按钮
+        </p>
+        <p>
+            {{ mySwitch }}
+        </p>
+    </div>
+</body>
+
+</html>

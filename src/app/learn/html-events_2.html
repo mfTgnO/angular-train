@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>html-events</title>
+    <!-- https://www.runoob.com/angularjs/angularjs-html-events.html -->
+</head>
+
+<body>
+    <!-- 
+        隐藏 HTML 元素
+        ng-hide 指令用于设置应用部分是否可见。
+
+        ng-hide="true" 设置 HTML 元素不可见。
+
+        ng-hide="false" 设置 HTML 元素可见。
+     -->
+    <!-- 
+
+        应用解析:
+
+        第一部分 personController与控制器章节类似。
+
+        应用有一个默认属性: $scope.myVar = false;
+
+        ng-hide 指令设置 <p>元素及两个输入域是否可见， 根据 myVar 的值 (true 或 false) 来设置是否可见。
+
+        toggle() 函数用于切换 myVar 变量的值（true 和 false）。
+
+        ng-hide="true" 让元素 不可见。
+      -->
+    <div ng-app="myApp" ng-controller="personCtrl">
+
+        <button ng-click="toggle()">隐藏/显示</button>
+
+        <p ng-hide="myVar">
+            名: <input type="text" ng-model="firstName"><br>
+            姓名: <input type="text" ng-model="lastName"><br>
+            <br>
+            Full Name: {{firstName + " " + lastName}}
+        </p>
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('personCtrl', function ($scope) {
+            $scope.firstName = "John",
+                $scope.lastName = "Doe"
+            $scope.myVar = false;
+            $scope.toggle = function () {
+                $scope.myVar = !$scope.myVar;
+            };
+        });
+    </script>
+</body>
+
+</html>
